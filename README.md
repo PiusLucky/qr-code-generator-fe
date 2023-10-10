@@ -17,4 +17,5 @@ bun dev
 
 ## Stack
 - Nextjs
+- Typescript
 
