@@ -23,14 +23,14 @@ class ApiClient {
     this.baseUrl = baseUrl;
   }
 
-  async get<T>(resource: string, endpoint: string): Promise<T | undefined> {
+  async get<T>(resource: string, endpoint: string): Promise<T> {
     try {
       const response = await this.axiosClient.get(
         `${this.baseUrl}${resource}${endpoint}`
       );
       return response.data;
     } catch (error) {
-      console.log(error);
+      throw new Error("Something went wrong " + error);
     }
   }
 }
